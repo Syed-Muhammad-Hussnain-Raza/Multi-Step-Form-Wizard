@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Syed Muhammad Hussnain Raza" />
+    <title>FormWizard_v8</title>
+    <!-- Bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <form id="mainForm" action="" method="post">
+        <!-- Step Navigator -->
+        <nav class="nav-head">
+          <!-- Step 1 -->
+          <span class="step-wrap">
+            <span class="step active" data-step="0">
+              <img
+                src="assets/step-1-active.png"
+                alt="Step 1"
+                class="step-img"
+              />
+              <span class="step-label">Step 01</span>
+            </span>
+            <img src="assets/step-arrow.png" alt="" class="step-arrow" />
+          </span>
+          <!-- Step 2 -->
+          <span class="step-wrap">
+            <span class="step" data-step="1">
+              <img src="assets/step-2.png" alt="Step 2" class="step-img" />
+              <span class="step-label">Step 02</span>
+            </span>
+            <img src="assets/step-arrow.png" alt="" class="step-arrow" />
+          </span>
+          <!-- Step 3 -->
+          <span class="step-wrap">
+            <span class="step" data-step="2">
+              <img src="assets/step-3.png" alt="Step 3" class="step-img" />
+              <span class="step-label">Step 03</span>
+            </span>
+            <img src="assets/step-arrow.png" alt="" class="step-arrow" />
+          </span>
+          <!-- Step 4 -->
+          <span class="step" data-step="3">
+            <img src="assets/step-4.png" alt="Step 4" class="step-img" />
+            <span class="step-label">Step 04</span>
+          </span>
+        </nav>
+
+        <!-- Step 1: Basic Details -->
+        <div class="form-step active" id="form1">
+          <div class="container mt-4">
+            <div class="row mb-1">
+              <div class="col text-center">
+                <h3>Basic Details</h3>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="input-section">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    name="firstName"
+                  />
+                  <i class="fa-solid fa-user"></i>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-section">
+                  <input type="text" placeholder="Last Name" name="lastName" />
+                  <i class="fa-solid fa-user"></i>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-section">
+                  <input type="text" placeholder="Email ID" name="emailId" />
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-section">
+                  <input type="text" placeholder="Your User ID" name="userId" />
+                  <i class="fa-solid fa-address-book"></i>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-section">
+                  <input type="text" placeholder="Country" name="country" />
+                  <i class="fa-solid fa-map"></i>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="input-section">
+                  <input type="text" placeholder="State" name="state" />
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="input-section">
+                  <input type="text" placeholder="City" name="city" />
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-section">
+                  <input
+                    type="text"
+                    placeholder="Phone Number"
+                    name="phNumber"
+                  />
+                  <i class="fa-solid fa-mobile"></i>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-section">
+                  <input
+                    type="password"
+                    id="refCode"
+                    placeholder="Reference Code"
+                    name="referenceCode"
+                  />
+                  <i class="fa-solid fa-eye showPass"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Password Change -->
+        <div class="form-step" id="form2">
+          <div class="container mt-4">
+            <div class="row">
+              <div class="col text-center">
+                <h3>Password Change</h3>
+              </div>
+            </div>
+            <div class="row g-4">
+              <div class="col-12">
+                <div class="input-section">
+                  <input
+                    type="password"
+                    id="currentPassword"
+                    placeholder="Current Password"
+                    name="currentPassword"
+                  />
+                  <i class="fa-solid fa-eye dis-none showPass eye-toggle"></i>
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="input-section">
+                  <input
+                    type="password"
+                    id="recurrentPassword"
+                    placeholder="Enter the Current Password"
+                    name="reEnterPassword"
+                  />
+                  <i class="fa-solid fa-eye dis-none showPass eye-toggle"></i>
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="input-section">
+                  <input
+                    type="password"
+                    id="newPassword"
+                    placeholder="New Password"
+                    name="newPassword"
+                  />
+                  <i class="fa-solid fa-eye dis-none showPass eye-toggle"></i>
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="input-section">
+                  <input
+                    type="password"
+                    id="confirmNewPassword"
+                    placeholder="Confirm Password"
+                    name="confirmPassword"
+                  />
+                  <i class="fa-solid fa-eye dis-none showPass eye-toggle"></i>
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: My Cart -->
+        <div class="form-step" id="form3">
+          <div class="container mt-2">
+            <div class="row">
+              <div class="col text-center">
+                <h3>My Cart</h3>
+              </div>
+            </div>
+            <table class="table" style="width: 100%">
+              <thead>
+                <tr class="bottom-border">
+                  <th class="tdata firstCol v-hidden"></th>
+                  <th class="tdata productDetail col-666 fw-bold fs-15">
+                    Product Details
+                  </th>
+                  <th class="tdata prodQuan col-666">Quantity</th>
+                  <th class="tdata thirdCol col-666">Total Price</th>
+                  <th class="tdata forthCol v-hidden"></th>
+                </tr>
+              </thead>
+              <tbody id="cart-body">
+                <tr class="rows">
+                  <td
+                    class="tdata firstCol d-flex justify-content-center justify-content-md-start ps-0"
+                  >
+                    <img src="assets/item-1.jpg" alt="Cherry" />
+                  </td>
+                  <td class="tdata productDetail" data-label="Product Details">
+                    <div>
+                      <h4 class="productName col-666 fw-bold fs-15">Cherry</h4>
+                      <span class="col-666 fs-15"
+                        >$
+                        <span class="productPrice" data-price="35"
+                          >35</span
+                        ></span
+                      >
+                    </div>
+                  </td>
+                  <td class="tdata prodQuan" data-label="Quantity">
+                    <div class="quantitySetting">
+                      <span class="addQuantity">+</span>
+                      <input
+                        type="text"
+                        value="1"
+                        readonly
+                        class="productQuantity"
+                      />
+                      <span class="minusQuantity">-</span>
+                    </div>
+                  </td>
+                  <td class="tdata thirdCol" data-label="Total Price">
+                    <div>
+                      <span class="fw-bold col-prim"
+                        >$ <span class="totalQuantityPrice">35</span></span
+                      >
+                    </div>
+                  </td>
+                  <td
+                    class="tdata forthCol col-666 d-flex justify-content-center"
+                  >
+                    <i class="fa-regular fa-circle-xmark btn-remove"></i>
+                  </td>
+                </tr>
+                <tr class="rows">
+                  <td
+                    class="tdata firstCol d-flex justify-content-center justify-content-md-start ps-0"
+                  >
+                    <img src="assets/item-2.jpg" alt="Mango" />
+                  </td>
+                  <td class="tdata productDetail" data-label="Product Details">
+                    <div>
+                      <h4 class="productName col-666 fs-15 fw-bold">Mango</h4>
+                      <span class="col-666 fs-15"
+                        >$
+                        <span class="productPrice" data-price="50"
+                          >50</span
+                        ></span
+                      >
+                    </div>
+                  </td>
+                  <td class="tdata prodQuan" data-label="Quantity">
+                    <div class="quantitySetting">
+                      <span class="addQuantity">+</span>
+                      <input
+                        type="text"
+                        value="1"
+                        readonly
+                        class="productQuantity"
+                      />
+                      <span class="minusQuantity">-</span>
+                    </div>
+                  </td>
+                  <td class="tdata thirdCol priceRow" data-label="Total Price">
+                    <div>
+                      <span class="fw-bold col-prim"
+                        >$ <span class="totalQuantityPrice">50</span></span
+                      >
+                    </div>
+                  </td>
+                  <td
+                    class="tdata forthCol col-666 d-flex justify-content-center"
+                  >
+                    <i class="fa-regular fa-circle-xmark btn-remove"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Step 4: Cart Totals -->
+        <div class="form-step" id="form4">
+          <div class="container mt-2 cart_totals">
+            <div class="row">
+              <div class="col mb-2 text-center">
+                <h3>Cart Totals</h3>
+              </div>
+            </div>
+            <div class="cart-setting-section">
+              <div class="cartLeft"><h4>Subtotal</h4></div>
+              <div class="cartRight">$ <span id="subTotal">110.00</span></div>
+            </div>
+            <div class="cart-setting-section shipping-section">
+              <div class="cartLeft"><h4>Shipping</h4></div>
+              <div class="shipping cartRight">
+                <span>
+                  <input
+                    type="radio"
+                    name="shippingType"
+                    class="shoppingType"
+                    value="freeShipping"
+                    checked
+                  />
+                  <label>Free Shipping</label>
+                </span>
+                <span>
+                  <input
+                    type="radio"
+                    name="shippingType"
+                    class="shoppingType"
+                    value="localPickup"
+                  />
+                  <label class="shipping-label"
+                    >Local pickup: <b>$0.00</b></label
+                  >
+                </span>
+                Calculate shipping
+              </div>
+            </div>
+            <div class="cart-setting-section">
+              <div class="cartLeft">
+                <h4>
+                  Service <span class="col-999">(estimated for Vietnam)</span>
+                </h4>
+              </div>
+              <div class="cartRight">
+                $ <span id="serviceCharges">5.60</span>
+              </div>
+            </div>
+            <div class="cart-setting-section fw-bold">
+              <div class="cartLeft"><h4>Total</h4></div>
+              <div class="cartRight col-333">
+                $ <span id="totalBill">64.69</span>
+              </div>
+            </div>
+          </div>
+          <div id="formSubmit">
+            <input type="submit" value="PROCEED TO CHECKOUT" />
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="control-nav mb-4">
+          <a href="#" id="back">BACK</a>
+          <a href="#" id="continue">CONTINUE</a>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
